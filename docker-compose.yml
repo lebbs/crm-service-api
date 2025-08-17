@@ -1,13 +1,17 @@
 
 services:
   web:
-    build: .
+    container_name: user_api
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "8080:80"
     depends_on:
       - db
 
   db:
+    container_name: user_db
     image: mysql:8.0
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword

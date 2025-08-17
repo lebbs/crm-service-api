@@ -18,7 +18,7 @@ $app->addRoutingMiddleware();
 $app->addErrorMiddleware(true, true, true);
 
 // Register routes
-(require __DIR__ . '/../routes.php')($app);
+(require __DIR__ . '/../Routes/routes.php')($app);
 
 // Run
 $app->run();

@@ -2,6 +2,8 @@
 ## Starting the program
 in project root execute following command:
 
+composer install
+
 docker-compose up -d --build
 
 # Users API — Curl Cheat Sheet

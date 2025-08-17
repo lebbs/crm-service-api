@@ -20,7 +20,7 @@ RUN sed -i 's#DocumentRoot /var/www/html#DocumentRoot /var/www/html/public#g' /e
                   "</Directory>" >> /etc/apache2/apache2.conf
 
 # Install Composer
-COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Copy composer files first (better layer caching)
 COPY composer.json /var/www/html/composer.json
